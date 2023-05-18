@@ -1,5 +1,5 @@
-// FORMATO DE RELOJ
-// HH:MM:SS
+// RELOJ
+// FORMATO HH:MM:SS
 
 // DEFINICIÓN DE VALORES NUMÉRICOS
 let segundos = 0;
@@ -12,43 +12,20 @@ let m = "";
 let h = "";
 
 // CONVERSIÓN DE VALORES NUMÉRICOS A VALORES TEXTUALES
-function conversion(unidad) {
-  switch (unidad) {
-    case "Segundos":
-      let segundosTextuales = String(segundos);
+function conversion(valor) {
+  let valorTextual = String(valor);
 
-      if (segundosTextuales.length === 1) {
-        s = "0" + segundosTextuales;
-      } else if (segundosTextuales.length === 2) {
-        s = segundosTextuales;
-      }
-  }
-  switch (unidad) {
-    case "Minutos":
-      let minutosTextuales = String(minutos);
-
-      if (minutosTextuales.length === 1) {
-        m = "0" + minutosTextuales;
-      } else if (minutosTextuales.length === 2) {
-        m = minutosTextuales;
-      }
-  }
-  switch (unidad) {
-    case "Horas":
-      let horasTextuales = String(horas);
-
-      if (horasTextuales.length === 1) {
-        h = "0" + horasTextuales;
-      } else if (horasTextuales.length === 2) {
-        h = horasTextuales;
-      }
+  if (valorTextual.length === 1) {
+    return "0" + valorTextual;
+  } else if (valorTextual.length === 2) {
+    return valorTextual;
   }
 }
 
 // FUNCIONAMIENTO DEL RELOJ (CADA 10 SEGUNDOS)
-conversion("Horas");
-conversion("Minutos");
-conversion("Segundos");
+s = conversion(segundos);
+m = conversion(minutos);
+h = conversion(horas);
 
 console.log(h + ":" + m + ":" + s);
 
@@ -65,9 +42,9 @@ do {
     horas = horas + 1;
   }
 
-  conversion("Horas");
-  conversion("Minutos");
-  conversion("Segundos");
+  s = conversion(segundos);
+  m = conversion(minutos);
+  h = conversion(horas);
 
   console.log(h + ":" + m + ":" + s);
 } while (horas !== 24);
