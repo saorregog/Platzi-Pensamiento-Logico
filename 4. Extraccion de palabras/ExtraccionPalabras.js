@@ -1,16 +1,16 @@
 // EXTRACCIÓN DE PALABRAS
 
-// DEFINICIÓN DE VARIABLES
+// DEFINICIÓN DE VARIABLE
 let oracion = "las flores son azules";
 
-// FUNCIÓN DE EXTRACCIÓN DE PALABRAS
-function extraccionPalabras(texto, posicionInicio, posicionFinal) {
-  let extraccion = "";
-  for (let i = posicionInicio - 1; i < posicionFinal; i++) {
-    extraccion = extraccion + texto[i];
+// FUNCIÓN DE EXTRACCIÓN DE PALABRA
+function extraccionPalabra(texto, posicionLetraInicio, posicionLetraFin) {
+  let palabraExtraida = "";
+  for (let i = posicionLetraInicio - 1; i < posicionLetraFin; i++) {
+    palabraExtraida = palabraExtraida + texto[i];
   }
-  console.log(extraccion);
+  console.log(palabraExtraida);
 }
 
-// EXTRACCIÓN DE PALABRAS DE UNA ORACIÓN
-extraccionPalabras(oracion, 5, 10);
+// EXTRACCIÓN DE PALABRA DE UNA ORACIÓN
+extraccionPalabra(oracion, 5, 10);
